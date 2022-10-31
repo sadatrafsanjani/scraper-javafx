@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sadatrafsanjani.scraper.FXMLController">
+   <children>
+      <HBox prefHeight="100.0" prefWidth="200.0" styleClass="banner" VBox.vgrow="NEVER" />
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="600.0" spacing="20.0" VBox.vgrow="NEVER">
+         <children>
+            <TextField fx:id="textField" prefHeight="25.0" prefWidth="302.0" promptText="e.g. www.gogle.com">
+               <font>
+                  <Font name="Courier New" size="12.0" />
+               </font>
+            </TextField>
+              <Button fx:id="downloadButton" onAction="#handleDownload" text="Download">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="refreshButton" mnemonicParsing="false" onAction="#handleRefresh" prefHeight="25.0" prefWidth="74.0" text="Refresh">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+            <Button fx:id="exportButton" mnemonicParsing="false" onAction="#handleExport" prefHeight="25.0" prefWidth="74.0" text="Export">
+               <font>
+                  <Font name="Arial" size="12.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="600.0" spacing="20.0" VBox.vgrow="NEVER">
+         <children>
+            <CheckBox fx:id="hyperlinkCheck" mnemonicParsing="false" text="Hyperlink" />
+            <CheckBox fx:id="imageCheck" mnemonicParsing="false" text="Image" />
+            <CheckBox fx:id="emailCheck" mnemonicParsing="false" text="E-Mail" />
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+        <tabs>
+          <Tab text="HyperLink">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <TextArea fx:id="linkArea" editable="false" prefHeight="315.0" prefWidth="520.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+          <Tab text="Image">
+               <content>
+                  <VBox>
+                     <children>
+                        <TextArea fx:id="imageArea" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+          </Tab>
+            <Tab text="E-Mail">
+               <content>
+                  <VBox>
+                     <children>
+                        <TextArea fx:id="emailArea" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="List">
+               <content>
+                  <VBox prefHeight="200.0" prefWidth="100.0">
+                     <children>
+                        <ListView fx:id="listView" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+        </tabs>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" />
+         </padding>
+      </TabPane>
+   </children>
+</VBox>
